@@ -1,0 +1,14 @@
+.nav-container{
+  display:flex;
+  margin-top: 15px;
+}
+
+.navs{
+  flex:2;
+}
+
+.auth{
+  margin-left: auto;
+  border-bottom: 1px solid #d5d5d5;
+}
+

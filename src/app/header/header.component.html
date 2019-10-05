@@ -1,0 +1,27 @@
+<div class="nav-container">
+      <div class="navs">
+          <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact:true}"
+                  routerLink="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"
+                  routerLinkActive="active"
+                  routerLink="banks">Banks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+      </div>
+      <div class="auth">
+        <button class="btn btn-light" (click)="onLogout()">Logout</button>
+      </div>
+
+</div>
