@@ -1,0 +1,14 @@
+<a  [routerLink]="[bank.code]"
+    routerLinkActive="active"
+    [queryParams]="{allowEdit:true}"
+    class="list-group-item list-group-item-action clearfix">
+    <div class="d-flex w-100 justify-content-between">
+      <div>
+          <h5>{{bank.name}}</h5>
+          <small>{{bank.code}}</small>
+      </div>
+      <div>
+        <p>0</p>
+      </div>
+    </div>
+</a>

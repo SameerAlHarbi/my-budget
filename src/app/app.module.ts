@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { BanksComponent } from './banks/banks.component';
+import { BanksListComponent } from './banks/banks-list/banks-list.component';
+import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BanksComponent } from './banks/banks.component';
     FooterComponent,
     HomeComponent,
     ErrorPageComponent,
-    BanksComponent
+    BanksComponent,
+    BanksListComponent,
+    BankItemComponent
   ],
   imports: [
     BrowserModule,

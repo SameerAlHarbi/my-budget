@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  isAuthenticatedUser = false;
+  isAuthenticatedUser = true;
   authSubscription: Subscription;
 
   constructor(private authService: AuthService) {

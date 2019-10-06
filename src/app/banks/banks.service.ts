@@ -27,5 +27,6 @@ export class BanksService {
 
   addBank(newBank) {
     this.banksList.push(newBank);
+    this.banksChanged.next(this.getBanks());
   }
 }

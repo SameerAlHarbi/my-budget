@@ -9,7 +9,7 @@ export class AuthService {
 
   authenticationChanged = new Subject<void>();
 
-  private loggedIn = false;
+  private loggedIn = true;
 
   isAuthenticated() {
     const promise = new Promise(
