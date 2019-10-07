@@ -32,7 +32,7 @@ export class BanksListComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.router.navigate(['new'], {relativeTo: this.route});
       this.creating = !this.creating;
-    }, 9000);
+    }, 400);
   }
 
   ngOnDestroy() {

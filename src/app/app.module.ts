@@ -12,6 +12,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { BanksComponent } from './banks/banks.component';
 import { BanksListComponent } from './banks/banks-list/banks-list.component';
 import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.component';
+import { BanksSummaryComponent } from './banks/banks-summary/banks-summary.component';
+import { BanksStartComponent } from './banks/banks-start/banks-start.component';
+import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
+import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { BankItemComponent } from './banks/banks-list/bank-item/bank-item.compon
     ErrorPageComponent,
     BanksComponent,
     BanksListComponent,
-    BankItemComponent
+    BankItemComponent,
+    BanksSummaryComponent,
+    BanksStartComponent,
+    BankDetailsComponent,
+    BankEditComponent
   ],
   imports: [
     BrowserModule,
