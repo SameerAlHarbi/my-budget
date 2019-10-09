@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { BanksSummaryComponent } from './banks/banks-summary/banks-summary.compo
 import { BanksStartComponent } from './banks/banks-start/banks-start.component';
 import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
 import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { fromStringWithSourceMap } from 'source-list-map';
 
 @NgModule({
   declarations: [
@@ -32,10 +35,12 @@ import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
     BanksSummaryComponent,
     BanksStartComponent,
     BankDetailsComponent,
-    BankEditComponent
+    BankEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,12 +1,30 @@
 <h4 style="text-align: center">Bank Details</h4>
 <br>
 <div class="d-flex w-100 justify-content-between">
-    <h4 style="color: rgb(151, 75, 12)">{{bank.name}}</h4>
+    <h4 style="color: rgb(151, 75, 12)">{{bank.name}} bank</h4>
 
-    <button type="button"
+    <!-- <button type="button"
             class="btn btn-warning"
             (click)="onBankEdit()"
-            [disabled]="!allowEdit"><i class="fas fa-pencil-alt"></i> Edit </button>
+            [disabled]="!allowEdit"><i class="fas fa-pencil-alt"></i> Edit </button> -->
+
+            <div appDropdown class="dropdown">
+              <button class="btn btn-warning dropdown-toggle"
+                type="button" id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false" [disabled]="!allowEdit">
+                <i class="fas fa-wrench"></i> Settings
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!-- <h6 class="dropdown-header">Bank Actions</h6> -->
+                  <button class="dropdown-item"
+                          type="button"
+                          (click)="onBankEdit()"><i class="fas fa-pencil-alt"></i> Edit Bank Info</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button" style="color: red"><i class="far fa-trash-alt"></i> Delete Bank Info</button>
+              </div>
+            </div>
 </div>
 
 
