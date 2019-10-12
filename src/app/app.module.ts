@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,11 @@ import { BanksStartComponent } from './banks/banks-start/banks-start.component';
 import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
 import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
-import { fromStringWithSourceMap } from 'source-list-map';
+import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
+import { BeneficiariesSummaryComponent } from './Beneficiaries/beneficiaries-summary/beneficiaries-summary.component';
+import { BeneficiariesEditComponent } from './Beneficiaries/beneficiaries-edit/beneficiaries-edit.component';
+import { BeneficiariesDetailsComponent } from './Beneficiaries/beneficiaries-details/beneficiaries-details.component';
+import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/beneficiaries-list.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +40,17 @@ import { fromStringWithSourceMap } from 'source-list-map';
     BanksStartComponent,
     BankDetailsComponent,
     BankEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    BeneficiariesComponent,
+    BeneficiariesSummaryComponent,
+    BeneficiariesEditComponent,
+    BeneficiariesDetailsComponent,
+    BeneficiariesListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

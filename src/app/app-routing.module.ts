@@ -10,6 +10,9 @@ import { BanksStartComponent } from './banks/banks-start/banks-start.component';
 import { BankDetailsComponent } from './banks/bank-details/bank-details.component';
 import { BankResolver } from './banks/bank-resolver.service';
 import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
+import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
+import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/beneficiaries-list.component';
+import { BeneficiariesEditComponent } from './Beneficiaries/beneficiaries-edit/beneficiaries-edit.component';
 
 const routes: Routes = [
     {path: '', component: HomeComponent, pathMatch: 'full' }// , canActivate: [AuthGuard]}
@@ -19,6 +22,10 @@ const routes: Routes = [
      , {path: ':code', component: BankDetailsComponent, resolve: { bank: BankResolver}}
      , {path: ':code/edit', component: BankEditComponent}
       ]}
+  , {path: 'beneficiaries', component: BeneficiariesComponent, children: [
+        {path: '', component: BeneficiariesListComponent }
+      , {path: 'new', component: BeneficiariesEditComponent}
+    ]}
   , {path: 'login', component: LoginComponent}
   , {path: 'not-found', component: ErrorPageComponent
       , data : { errorType: 'notfound', message: 'Page not found'}}

@@ -1,0 +1,43 @@
+<div class="d-flex" style="margin-bottom: 15px">
+    <button class="btn btn-success"
+            style="margin-left: auto"
+            (click)="onNewBeneficiary()">
+            <i Class="fas fa-plus"></i>
+            Add New Beneficiary </button>
+</div>
+
+
+<div class="table-responsive-sm">
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Relation</th>
+      <th>Email</th>
+      <th>Debt</th>
+    </thead>
+    <tbody>
+      <tr *ngIf="beneficiariesList.length < 1">
+        <td colspan="6">
+          <p style="text-align: center;color: rgb(109, 101, 101);font-style: italic">
+              .... No Data ....
+          </p>
+        </td>
+      </tr>
+      <tr *ngFor="let beneficiaryItem of beneficiariesList; let i = index">
+        <td>{{ i }}</td>
+        <td>{{ beneficiaryItem.Code }}</td>
+        <td>{{ beneficiaryItem.name }}</td>
+        <td>{{ beneficiaryItem.relation }}</td>
+        <td>{{ beneficiaryItem.email }}</td>
+        <td>{{ beneficiaryItem.debt }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr *ngIf="beneficiariesList.length > 0">
+        <td colspan="4"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -16,7 +16,7 @@ export class BankEditComponent implements OnInit {
   bank: Bank;
   allowEdit = false;
 
-  bankTypes = ['Salary, Saving'];
+  bankTypes = ['Salary', 'Saving'];
 
   @ViewChild('f', {static: true}) bankForm: NgForm;
 
@@ -37,6 +37,8 @@ export class BankEditComponent implements OnInit {
        this.bank = this.banksService.getBankByCode(bankCode);
        this.editMode = params.code != null;
        this.title = this.editMode ? 'Edit ' + this.bank.name + ' Bank Information' : 'Add New Bank';
+
+       this.initForm();
       });
 
     this.route.queryParams.subscribe(
@@ -50,8 +52,21 @@ export class BankEditComponent implements OnInit {
   //   console.log(form);
   // }
 
+  initForm() {
+    if (this.editMode && this.bank) {
+      this.bankForm.form.patchValue({
+        code: this.bank.code,
+        bankInfo: {
+          name: this.bank.name,
+        }});
+    }
+  }
+
   onSubmit() {
-    console.log(this.bankForm);
+    this.bank.code = this.bankForm.value.code;
+    this.bank.name = this.bankForm.value.bankInfo.name;
+
+    this.bankForm.reset();
   }
 
 }
