@@ -1,5 +1,3 @@
-
-
 <div style="margin: 30px;width: 600px">
     <h4 style="color: blue">Add New Beneficiary</h4>
     <form [formGroup]="beneficiaryForm" (ngSubmit)="onSubmit()">
@@ -11,45 +9,69 @@
                 formControlName="code"
                 class="form-control">
       </div>
-      <div class="form-group">
-        <label for="name">Name :</label>
-        <input type="text"
-                id="name"
-                name="name"
-                formControlName="name"
-                class="form-control">
-        <small
-          *ngIf="!beneficiaryForm.get('name').valid && beneficiaryForm.get('name').touched"
-          class="form-text text-muted" style="color: red !important;font-style: italic">
-          Name is require
-        </small>
+      <div formGroupName="personalData">
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <input type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  class="form-control">
+          <small
+            *ngIf="!beneficiaryForm.get('personalData.name').valid && beneficiaryForm.get('personalData.name').touched"
+            class="form-text text-muted" style="color: red !important;font-style: italic">
+            <span *ngIf="beneficiaryForm.get('personalData.name').errors['nameIsForbidden']">
+              Name is Forbidden
+            </span>
+            <span *ngIf="beneficiaryForm.get('personalData.name').errors['required']">
+              Name is require
+            </span>
+
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="text"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  class="form-control">
+              <small class="form-text text-muted"
+                *ngIf="!beneficiaryForm.get('personalData.email').valid && beneficiaryForm.get('personalData.email').touched">
+                Email not valid!
+              </small>
+        </div>
+        <div class="form-group">
+          <label> Relation :</label>
+          <br>
+            <div class="form-check form-check-inline"
+              *ngFor="let relation of relations">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="relation"
+                  [id]="relation"
+                  [value]="relation"
+                  formControlName="relation">
+                <label class="form-check-label" [for]="relation">
+                  {{ relation }}
+                </label>
+            </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email :</label>
-        <input type="text"
-                id="email"
-                name="email"
-                formControlName="email"
-                class="form-control">
-      </div>
-      <div class="form-group">
-        <label> Relation :</label>
-        <br>
-          <div class="form-check form-check-inline"
-            *ngFor="let relation of relations">
-              <input
-                type="radio"
-                class="form-check-input"
-                name="relation"
-                [id]="relation"
-                [value]="relation"
-                formControlName="relation">
-              <label class="form-check-label" [for]="relation">
-                {{ relation }}
-              </label>
-          </div>
+      <div formArrayName="hobbies">
+        <h4>User Hobbies</h4>
+        <button class="btn btn-secondary" (click)="onAddHobby()">Add Hobby</button>
+        <div class="form-group"
+          *ngFor="let hobbyControl of controls;let i = index">
+          <input type="text" class="form-control" [formControlName]="i">
+        </div>
       </div>
       <br>
+      <small class="form-text text-muted"
+        *ngIf="!beneficiaryForm.valid && beneficiaryForm.touched">
+          Please enter valid data!.
+      </small>
       <button type="submit" class="btn btn-primary">
         <i class="fas fa-arrow-down"></i>
         Save
