@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-beneficiaries-edit',
@@ -73,9 +74,9 @@ export class BeneficiariesEditComponent implements OnInit {
     (this.beneficiaryForm.get('hobbies') as FormArray).push(control);
   }
 
-  forbiddenName(control: FormControl): {[s: string], boolean } {
+  forbiddenName(control: FormControl): { [s: string]: boolean } {
     if (this.forbiddenNames.indexOf(control.value) !== -1) {
-      return {nameIsForbidden: true};
+      return {'nameIsForbidden': true};
     }
     return null;
   }

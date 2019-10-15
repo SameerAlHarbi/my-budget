@@ -23,6 +23,8 @@ import { BeneficiariesSummaryComponent } from './Beneficiaries/beneficiaries-sum
 import { BeneficiariesEditComponent } from './Beneficiaries/beneficiaries-edit/beneficiaries-edit.component';
 import { BeneficiariesDetailsComponent } from './Beneficiaries/beneficiaries-details/beneficiaries-details.component';
 import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/beneficiaries-list.component';
+import { ShortenPipe } from './shared/pipes/shorten.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/b
     BeneficiariesSummaryComponent,
     BeneficiariesEditComponent,
     BeneficiariesDetailsComponent,
-    BeneficiariesListComponent
+    BeneficiariesListComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
