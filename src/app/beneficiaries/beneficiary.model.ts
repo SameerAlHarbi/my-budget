@@ -5,6 +5,7 @@ export class Beneficiary {
   constructor(public code: string
             , public name: string
             , public relation: string
+            , public mobile?: string
             , public email?: string) {}
 
 }

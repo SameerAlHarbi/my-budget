@@ -1,0 +1,75 @@
+
+
+<div class="row" style="margin-top:20px;">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="code">Relation Code</label>
+            <input type="text"
+                   id="code"
+                   name="code"
+                   class="form-control"
+                   [ngClass]="{'is-invalid':!code.valid && code.touched}"
+                   ngModel
+                   required
+                   #code="ngModel"
+                   [readOnly]="editMode"
+                   placeholder="Relation Code"
+                   aria-describedby="codeHelp">
+                   <small
+                     *ngIf="code.valid || code.untouched"
+                      class="form-text text-muted">
+                     Relation Code
+                   </small>
+                   <div class="invalid-feedback"
+                    *ngIf="!code.valid && code.touched">
+                    Please provide a valid relation code.
+                   </div>
+        </div>
+        <div class="form-group col">
+            <label for="name">Relation Name</label>
+            <input type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                [ngClass]="{'is-invalid':!name.valid && name.touched}"
+                placeholder="Relation Name"
+                ngModel
+                required
+                #name="ngModel"
+                #nameInput
+                aria-describedby="nameHelp">
+                <small *ngIf="name.valid || name.untouched"
+                      id="nameHelp"
+                      class="form-text text-muted">
+                    Relation Name
+                </small>
+                <div class="invalid-feedback"
+                  *ngIf="!name.valid && name.touched">
+                    Please provide a valid relation name.
+                </div>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 10px;">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!f.valid"><i class="fas fa-save"></i>
+            {{ editMode ? 'Update' : 'Add' }}
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="onDelete()"
+            style="margin-left: 10px;"
+            *ngIf="editMode">Delete</button>
+          <button
+            class="btn btn-warning"
+            type="button"
+            (click)="onClear()"
+            style="margin-left: 10px;"><i class="fas fa-ban"></i> Clear</button>
+      </div>
+    </form>
+  </div>
+</div>

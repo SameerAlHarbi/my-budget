@@ -7,7 +7,10 @@ import { Subject } from 'rxjs';
 })
 export class BeneficiariesService {
 
-  beneficiariesList: Beneficiary[] = [];
+  beneficiariesList: Beneficiary[] = [
+    new Beneficiary('0000', 'Rami', 'Brother', '0569663742', 'rwmiw14@gmail.com'),
+    new Beneficiary('0001', 'Samer', 'Brother'),
+  ];
 
   beneficiariesChanged = new Subject<Beneficiary[]>();
 

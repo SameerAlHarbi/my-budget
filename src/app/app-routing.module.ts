@@ -13,6 +13,7 @@ import { BankEditComponent } from './banks/bank-edit/bank-edit.component';
 import { BeneficiariesComponent } from './beneficiaries/beneficiaries.component';
 import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/beneficiaries-list.component';
 import { BeneficiariesEditComponent } from './Beneficiaries/beneficiaries-edit/beneficiaries-edit.component';
+import { RelationsComponent } from './relations/relations.component';
 
 const routes: Routes = [
     {path: '', component: HomeComponent, pathMatch: 'full' }// , canActivate: [AuthGuard]}
@@ -26,6 +27,7 @@ const routes: Routes = [
         {path: '', component: BeneficiariesListComponent }
       , {path: 'new', component: BeneficiariesEditComponent}
     ]}
+  , {path: 'relations', component: RelationsComponent}
   , {path: 'login', component: LoginComponent}
   , {path: 'not-found', component: ErrorPageComponent
       , data : { errorType: 'notfound', message: 'Page not found'}}

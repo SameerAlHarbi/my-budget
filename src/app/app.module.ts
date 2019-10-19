@@ -25,6 +25,9 @@ import { BeneficiariesDetailsComponent } from './Beneficiaries/beneficiaries-det
 import { BeneficiariesListComponent } from './Beneficiaries/beneficiaries-list/beneficiaries-list.component';
 import { ShortenPipe } from './shared/pipes/shorten.pipe';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { RelationsComponent } from './relations/relations.component';
+import { RelationEditComponent } from './relations/relation-edit/relation-edit.component';
+import { RelationsListComponent } from './relations/relations-list/relations-list.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     BeneficiariesDetailsComponent,
     BeneficiariesListComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    RelationsComponent,
+    RelationEditComponent,
+    RelationsListComponent
   ],
   imports: [
     BrowserModule,
