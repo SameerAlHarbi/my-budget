@@ -45,15 +45,17 @@ export class RelationsService {
     const currentRelation = this.findRelationByCode(newRelation.code);
     if (currentRelation) {
       currentRelation.name = newRelation.name;
+      this.relationsChanged.next(this.getAllRelations());
     }
-    this.relationsChanged.next(this.getAllRelations());
   }
 
   deleteRelation(relationCode: string) {
     const currentRelation = this.findRelationByCode(relationCode);
-    const index = this.relations.indexOf(currentRelation);
-    this.relations.splice(index, 1);
-    this.relationsChanged.next(this.getAllRelations());
+    if (currentRelation) {
+      const index = this.relations.indexOf(currentRelation);
+      this.relations.splice(index, 1);
+      this.relationsChanged.next(this.getAllRelations());
+    }
   }
 
 }
